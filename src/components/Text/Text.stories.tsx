@@ -46,6 +46,11 @@ export const CustomComponent : StoryObj<TextProps> = {
       control: {
         disable: true
       }
+    },
+    asChild: {
+      control: {
+        disable: true
+      }
     }
   }
 };
