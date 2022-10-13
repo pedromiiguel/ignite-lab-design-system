@@ -8,7 +8,7 @@ export interface HeadingProps {
   asChild: boolean;
 }
 
-export function Text({ size = 'md', children, asChild }: HeadingProps) {
+export function Heading({ size = 'md', children, asChild }: HeadingProps) {
   const Component = asChild ? Slot : 'h2';
 
   const sizes = {
