@@ -14,12 +14,12 @@ module.exports = {
         'cyan-300': '#9BE1FB',
       },
       fontSize: {
-        xs: '14',
-        sm: '16',
-        md: '18',
-        lg: '20',
-        xl: '24',
-        '2xl': '32',
+        xs: 14,
+        sm: 16,
+        md: 18,
+        lg: 20,
+        xl: 24,
+        '2xl': 32,
       },
       fontFamily: {
         sans: 'Inter, sans-serif',
