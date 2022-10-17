@@ -5,10 +5,16 @@ import { ReactNode } from 'react';
 export interface HeadingProps {
   size?: 'sm' | 'md' | 'lg';
   children: ReactNode;
-  asChild: boolean;
+  asChild?: boolean;
+  className?: string;
 }
 
-export function Heading({ size = 'md', children, asChild }: HeadingProps) {
+export function Heading({
+  size = 'md',
+  children,
+  asChild,
+  className,
+}: HeadingProps) {
   const Component = asChild ? Slot : 'h2';
 
   const sizes = {
@@ -18,7 +24,13 @@ export function Heading({ size = 'md', children, asChild }: HeadingProps) {
   };
 
   return (
-    <Component className={clsx('text-gray-100 font-bold font-sans', sizes[size])}>
+    <Component
+      className={clsx(
+        'text-gray-100 font-bold font-sans',
+        sizes[size],
+        className
+      )}
+    >
       {children}
     </Component>
   );
