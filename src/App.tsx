@@ -1,11 +1,8 @@
-import './styles/global.css'
+import { SignIn } from '@/pages/Signin';
+import './styles/global.css';
 
 function App() {
-  return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </div>
-  );
+  return <SignIn />;
 }
 
 export default App;
