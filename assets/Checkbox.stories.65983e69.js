@@ -1,0 +1,2 @@
+import{C as t}from"./index.d5c854a1.js";import"./index.module.57b1b47c.js";import"./index.2b6ab7ac.js";import"./iframe.37657f46.js";import"./index.b55ab95f.js";import"./index.e5128aed.js";import"./clsx.m.256e9345.js";import"./jsx-runtime.d6b12686.js";import"./IconBase.esm.cc750eb6.js";const c={title:"Components/Checkbox",component:t,args:{label:"Lembrar de mim por 30 dias",id:"authenticated"},argTypes:{}},d={},l=["Default"];export{d as Default,l as __namedExportsOrder,c as default};
+//# sourceMappingURL=Checkbox.stories.65983e69.js.map
