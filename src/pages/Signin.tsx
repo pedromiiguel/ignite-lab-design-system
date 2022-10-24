@@ -1,3 +1,4 @@
+import axios, { AxiosError } from 'axios';
 import { Envelope, Lock } from 'phosphor-react';
 import { FormEvent, useState } from 'react';
 import {
@@ -11,11 +12,22 @@ import {
 
 export function SignIn() {
   const [isUserSignedIn, setIsUserSignedIn] = useState(false);
+  const [error, setError] = useState<string | undefined>('');
 
-  const handleSignIn = (event: FormEvent) => {
+  const handleSignIn = async (event: FormEvent) => {
     event.preventDefault();
 
-    setIsUserSignedIn(true);
+    try {
+      await axios.post('/sessions', {
+        email: 'pedro@email.com',
+        password: '123456',
+      });
+
+      setIsUserSignedIn(true);
+    } catch (error) {
+      const err = error as AxiosError;
+      setError(err?.response?.statusText);
+    }
   };
 
   return (
@@ -59,9 +71,14 @@ export function SignIn() {
         </label>
 
         <Checkbox label="Lembrar de mim por 30 dias" id="remember" />
+        
         <Button type="submit" className="mt-4">
           Entrar na plataforma
         </Button>
+
+        {!!error && (
+          <Text className="text-red-600 text-center" size="sm">{error}</Text>
+        )}
       </form>
       <footer className="flex flex-col items-center gap-4 mt-8">
         <Text size="sm">
